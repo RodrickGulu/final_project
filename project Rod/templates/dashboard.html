@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dashboard.css') }}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <header>
+        <h1>GlaucoVision: Your Eye Health Predictor</h1>
+    </header>
+<main>
+    <nav>
+        <ul class="rounded-breadcrumbs"> <!-- Update the class here -->
+            {% for breadcrumb in breadcrumbs %}
+                {% if loop.last %}
+                    <li>{{ breadcrumb.text }}</li>
+                {% else %}
+                    <li><a href="{{ breadcrumb.url }}">{{ breadcrumb.text }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
+
+    <h3>Hello, {{ session['username'] }}!</h3>
+    
+
+    <div class="data-area">
+        <h2>Model Metrics</h2>
+        <table>
+            <tr>
+                <th>Class</th>
+                <th>Precision</th>
+                <th>Recall</th>
+                <th>F1 Score</th>
+                <th>Support</th>
+            </tr>
+            {% for key, values in model_metrics.items() %}
+            <tr>
+                <td>{{ key }}</td>
+                {% for value in values.values() %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <h3>Accuracy: <i>{{accuracy}}</i></h3>
+    </div>
+
+    <div class="image-section">
+        <h2>Confusion Matrix</h2>
+        <img class="image" src="{{ url_for('get_image1') }}" alt="Confusion Matrix">
+    </div>
+
+    <div class="image-section">
+        <h2>ROC Curve</h2>
+        <img class="image" src="{{ url_for('get_image2') }}" alt="ROC Curve">
+    </div>
+
+    <div class="navigation">
+        <a href="{{ url_for('upload_image') }}">Go to prediction page</a>
+        <a href="{{ url_for('register') }}">Add new user</a> <!-- Add register link here -->
+    </div>
+</main>
+
+<footer>
+    <p>&copy; {{year}} Rodrick Gulu</p>
+</footer>
+</body>
+</html>

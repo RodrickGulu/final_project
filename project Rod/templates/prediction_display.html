@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles_prediction_display.css') }}">
+    <title>Prediction Display</title>
+</head>
+<body>
+    <header>
+        <h1>GlaucoVision: Your Eye Health Predictor</h1>
+    </header>
+    <main>
+        <nav>
+            <ul class="rounded-breadcrumbs">
+                {% for breadcrumb in breadcrumbs %}
+                    {% if loop.last %}
+                        <li>{{ breadcrumb.text }}</li>
+                    {% else %}
+                        <li><a href="{{ breadcrumb.url }}">{{ breadcrumb.text }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+
+        <h3>Hello, {{ session['username'] }}!</h3>
+
+<div class=predictions>
+        <h1>PREDICTIONS</h1>
+        <p><b>Prediction: </b>{{classs}}</p>
+        <h3>Confidence Level: {{predictions}}%</h3>
+</div>
+    </main>
+
+    <footer>
+        <p>&copy; {{year}} Rodrick Gulu</p>
+    </footer>
+</body>
+</html>

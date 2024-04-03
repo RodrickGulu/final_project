@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles_upload_image.css') }}">
+    <title>Upload Image</title>
+</head>
+<body>
+    <header>
+        <h1>GlaucoVision: Your Eye Health Predictor</h1>
+    </header>
+    <main>
+        <nav>
+            <ul class="rounded-breadcrumbs"> <!-- Update the class here -->
+                {% for breadcrumb in breadcrumbs %}
+                    {% if loop.last %}
+                        <li>{{ breadcrumb.text }}</li>
+                    {% else %}
+                        <li><a href="{{ breadcrumb.url }}">{{ breadcrumb.text }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+
+        <h3>Hello, {{ session['username'] }}!</h3>
+
+        <form action="{{ url_for('upload_image') }}" method="POST" enctype="multipart/form-data" class="upload-form" id="upload-form">
+            <label for="file" class="file-label" id="file-label">
+                <input type="file" name="file" id="file" accept=".jpg, .png, .jpeg" class="file-input">
+                <span class="file-icon">+</span>
+                <span class="file-text">Drag and drop or click to upload</span>
+            </label>
+            <button type="submit" class="upload-button">Upload</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; {{year}} Rodrick Gulu</p>
+    </footer>
+
+    <script>
+        const fileLabel = document.getElementById('file-label');
+        const fileInput = document.getElementById('file');
+
+        // Prevent default behavior for dragover and drop events
+        fileLabel.addEventListener('dragover', (e) => {
+            e.preventDefault();
+        });
+
+        fileLabel.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const file = e.dataTransfer.files[0];
+            handleFile(file);
+        });
+
+        // Update file label text and handle file input change event
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            handleFile(file);
+        });
+
+        function handleFile(file) {
+            const fileName = file.name;
+            fileLabel.querySelector('.file-text').textContent = fileName;
+        }
+    </script>
+</body>
+</html>

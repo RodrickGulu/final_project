@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.upload-form {
+    margin: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding-top:50px;
+    padding-bottom: 50px;
+}
+
+.file-label {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-icon {
+    font-size: 36px;
+}
+
+.file-text {
+    margin-top: 10px;
+}
+
+.upload-button {
+    margin-top: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upload-button:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 0px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Rounded breadcrumb styles */
+.rounded-breadcrumbs {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    text-decoration: none;
+  }
+  
+  .rounded-breadcrumbs li {
+    margin: 0 8px 0 0;
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  .rounded-breadcrumbs li a, 
+  .rounded-breadcrumbs li a:link, 
+  .rounded-breadcrumbs li a:visited {
+    padding: 5px 15px;
+    color: white;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+    background: #333;
+    border-radius: 5px; /* Adjust the border-radius to make the breadcrumbs more or less rounded */
+    position: relative;
+    text-decoration: none;
+    border: 2px solid #333;
+
+  }
+  
+  .rounded-breadcrumbs li a:before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background: #333;
+    border-radius: 50%;
+    border: 2px solid white;
+    right: -7px;
+    text-decoration: none;
+  }
+  
+  .rounded-breadcrumbs li a:hover, 
+  .rounded-breadcrumbs li:last-of-type a {
+    background: white;
+    color:#333;
+    border: 2px solid #333;
+  }
+  
+  .rounded-breadcrumbs li a:hover:before, 
+  .rounded-breadcrumbs li:last-of-type a:before {
+    background: #333;
+    border: 2px solid white;
+  }
+
+  h3 {
+    padding:15px;
+  }
+  

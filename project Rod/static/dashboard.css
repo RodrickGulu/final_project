@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+main {
+    padding: 20px;
+}
+
+.data-area {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.image-section {
+    margin-top: 20px;
+    border: 1px solid #08306b;
+    border-radius: 25px;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.image {
+    max-width: 50%;
+    height: auto;
+}
+
+.navigation {
+    margin-top: 20px;
+    text-align: center; /* Center the navigation links */
+}
+
+.navigation a {
+    margin-right: 10px;
+    color: #fff; /* Change the text color to white */
+    text-decoration: none;
+    padding: 8px 16px; /* Increase padding for better clickability */
+    border: 2px solid #333; /* Increase border width and change color */
+    border-radius: 25px; /* Make the borders rounded */
+    background-color: #333; /* Change background color to dark grey */
+    transition: background-color 0.3s ease; /* Add smooth transition effect */
+}
+
+.navigation a:hover {
+    background-color: #555; /* Darken the background color on hover */
+}
+
+/* Rounded breadcrumb styles */
+.rounded-breadcrumbs {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    text-decoration: none;
+  }
+  
+  .rounded-breadcrumbs li {
+    margin: 0 8px 0 0;
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  .rounded-breadcrumbs li a, 
+  .rounded-breadcrumbs li a:link, 
+  .rounded-breadcrumbs li a:visited {
+    padding: 5px 15px;
+    color: white;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+    background: #333;
+    border-radius: 5px; /* Adjust the border-radius to make the breadcrumbs more or less rounded */
+    position: relative;
+    text-decoration: none;
+    border: 2px solid #333;
+
+  }
+  
+  .rounded-breadcrumbs li a:before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background: #333;
+    border-radius: 50%;
+    border: 2px solid white;
+    right: -7px;
+    text-decoration: none;
+  }
+  
+  .rounded-breadcrumbs li a:hover, 
+  .rounded-breadcrumbs li:last-of-type a {
+    background: white;
+    color:#333;
+    border: 2px solid #333;
+  }
+  
+  .rounded-breadcrumbs li a:hover:before, 
+  .rounded-breadcrumbs li:last-of-type a:before {
+    background: #333;
+    border: 2px solid white;
+  }
+
+  h3 {
+    padding:15px;
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2px;
+    padding-left: 0%;
+    padding-right: 0%;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Header row styles */
+th {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+/* Alternate row colors */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Cell styles */
+td {
+    padding: 10px 20px;
+}
+
+/* Hover effect on rows */
+tr:hover {
+    background-color: #ddd;
+}
